@@ -1,0 +1,44 @@
+<!Doctype html> 
+<html>
+    <head> 
+        <script src = "/static/scripts/app.js"> </script> 
+        <link rel = "stylesheet" href = "/static/styles/form.css">
+        <link rel = "stylesheet" href = "/static/styles/navbar.css">
+
+    </head>
+    <body>
+        <div class = "navbar"> 
+            <h3> Report Assistant </h3> 
+            <ul>
+                <li> <a href = "#"> Booking Report Converter </a> </li> 
+                <li> <a href = "#"> TEU adder </a> </li> 
+            </ul>
+        </div> 
+        <div class = "form-container"> 
+            <form action = "/fill", method="POST", enctype=multipart/form-data class = "form"> 
+                <div class = "btn-container"> 
+                    <h1> Drop a file or click to upload</h1> 
+                    <input type = "file" name = "read_file" id = "read" class = "file_input"> 
+                    <div class = "info-container"> 
+                        <h1> Select your booking data here </h1> 
+                    </div> 
+                </div> 
+                <div class = "btn-container">
+                    <h1>Drop a file or click to upload</h1> 
+                    <input type = "file" name = "write_file" id = "write" class = "file_input"> 
+                    <div class = "info-container"> 
+                        <h1> Select your booking report here </h1> 
+                    </div> 
+                </div>
+
+                <button class = "submit-btn"> Generate Report </button> 
+                <!---
+                
+                <input type = "submit" class = "submit-btn" value = "Generate Report"> 
+
+                -->
+            </form>
+
+        </div>
+    </body>
+</html>
