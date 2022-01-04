@@ -12,6 +12,7 @@ def fill_data():
         for i in os.listdir("static/Sheets"):
             os.remove("static/Sheets/{}".format(i))
 
+
     if request.files:
         read_file = request.files['read_file']
         write_file = request.files['write_file']

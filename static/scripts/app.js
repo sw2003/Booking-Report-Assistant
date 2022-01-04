@@ -49,7 +49,8 @@ function validate_user_files(){
 
         document.querySelectorAll(".file_input").forEach(function(inputElement){
             if (inputElement.files.length == 0){
-                return false
+                console.log("its fase")
+                return_value= false
             }
         })
 
