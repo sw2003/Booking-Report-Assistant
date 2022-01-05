@@ -11,6 +11,7 @@ app.config["SHEET_STORAGE"] = "/Users/sam/Python-Excel-Project/static/Sheets"
 
 print(__file__ + " " + "1")
 print(os.path.abspath(__file__) + " " +  "2")
+print(os.path.dirname(os.path.abspath(__file__)) + " " + "BIG_YEET")
 
 
 @app.route("/")
