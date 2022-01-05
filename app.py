@@ -9,7 +9,7 @@ app.config["SHEET_UPLOAD"] = "/Users/sam/Python-Excel-Project/static/Sheets"
 app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["XLSX"]
 app.config["SHEET_STORAGE"] = "/Users/sam/Python-Excel-Project/static/Sheets"
 
-
+print(__file__)
 
 
 @app.route("/")
