@@ -5,13 +5,14 @@ import os
 app = Flask(__name__) 
 app.register_blueprint(write_app, url_prefix="")
 
-app.config["SHEET_UPLOAD"] = "/Users/sam/Python-Excel-Project/static/Sheets"
-app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["XLSX"]
-app.config["SHEET_STORAGE"] = "/Users/sam/Python-Excel-Project/static/Sheets"
 
-print(__file__ + " " + "1")
-print(os.path.abspath(__file__) + " " +  "2")
-print(os.path.dirname(os.path.abspath(__file__)) + " " + "BIG_YEET")
+root_directory = os.path.dirname(os.path.abspath(__file__))
+
+app.config["SHEET_UPLOAD"] = "{}/static/Sheets".format(root_directory)
+app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["XLSX"]
+app.config["SHEET_STORAGE"] = "{}/static/Sheets".format(root_directory)
+
+
 
 
 @app.route("/")
