@@ -8,9 +8,12 @@ write_app = Blueprint("write_app", __name__, static_folder="static", template_fo
 
 @write_app.route("/fill", methods = ["POST"])
 def fill_data():
+    print(2)
     if len(os.listdir("static/Sheets")) >= 1:
         for i in os.listdir("static/Sheets"):
             os.remove("static/Sheets/{}".format(i))
+
+    print(3)
 
 
     if request.files:
@@ -30,6 +33,8 @@ def fill_data():
 
         shipping_lane_names = ['CPNW', 'CENX','MPNW', 'OPNW', 'EPNW', 'AWE5', 'GEX1', 'GEX2']
         shipping_lane_code = ""
+
+        print(4)
 
         for j in range(5, main_ws.max_row-6):
             name = main_ws['A{}'.format(j)].value
@@ -117,6 +122,7 @@ def fill_data():
                         main_ws['U{}'.format(j)] = data['TOR']['VAN']
                         main_ws['V{}'.format(j)] = data['TOR']['RF']
 
+        print(5)
         main_workbook.save("static/Sheets/{}".format(write_file.filename))
     try: 
         return send_from_directory(current_app.config["SHEET_STORAGE"], write_file.filename, as_attachment=True)

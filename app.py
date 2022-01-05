@@ -13,7 +13,7 @@ app.config["ALLOWED_IMAGE_EXTENSIONS"] = ["XLSX"]
 app.config["SHEET_STORAGE"] = "{}/static/Sheets".format(root_directory)
 
 
-
+print(1)
 
 @app.route("/")
 def index():
