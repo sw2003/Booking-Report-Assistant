@@ -39,6 +39,7 @@ def fill_data():
         for j in range(5, main_ws.max_row-6):
             name = main_ws['A{}'.format(j)].value
             color_of_tab = main_ws['A{}'.format(j)].fill.fgColor
+            print(j)
             
             if name != "BLANK VOYAGE" and name != None and name != "TBN" and name != "SUB TOTAL":
                 if name in shipping_lane_names or color_of_tab.tint == 0:
